@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse" name="agency" context="/agency">
+   <resource methods="GET">
+      <inSequence>
+         <send>
+            <endpoint>
+               <address uri="http://10.251.31.59:9768/services/agency_service"/>
+            </endpoint>
+         </send>
+      </inSequence>
+      <outSequence>
+         <send>
+            <endpoint>
+               <default/>
+            </endpoint>
+         </send>
+      </outSequence>
+   </resource>
+</api>

@@ -1,0 +1,194 @@
+<data name="agency_service" serviceNamespace="http://ws.wso2.org/dataservice">
+   <config id="DS-AGENCY">
+      <property name="carbon_datasource_name">DS-AGENCY</property>
+   </config>
+   <query id="spget_orglist" useConfig="DS-AGENCY">
+      <sql>call spget_orglist(?)</sql>
+      <result element="organizations" rowName="organization">
+         <element column="id" name="id" xsdType="string"/>
+         <element column="title" name="title" xsdType="string"/>
+         <element column="link" name="link" xsdType="string"/>
+         <element column="description" name="description" xsdType="string"/>
+         <element column="language" name="language" xsdType="string"/>
+         <element column="abrv" name="abrv" xsdType="string"/>
+         <element column="level" name="level" xsdType="string"/>
+         <element column="ttl" name="ttl" xsdType="string"/>
+         <element column="pubdate" name="pubdate" xsdType="dateTime"/>
+         <element column="lastbuilddate" name="lastbuilddate" xsdType="dateTime"/>
+      </result>
+      <param defaultValue="-1" name="org_id" sqlType="STRING"/>
+   </query>
+   <query id="spget_locations" useConfig="DS-AGENCY">
+      <sql>call spget_locations(?,?)</sql>
+      <result element="addresses" rowName="address">
+         <element column="id" name="id" xsdType="string"/>
+         <element column="city" name="city" xsdType="string"/>
+         <element column="lat" name="lat" xsdType="string"/>
+         <element column="Lon" name="Lon" xsdType="string"/>
+         <element column="phone" name="phone" xsdType="string"/>
+         <element column="state" name="state" xsdType="string"/>
+         <element column="street1" name="street1" xsdType="string"/>
+         <element column="street2" name="street2" xsdType="string"/>
+         <element column="zip" name="zip" xsdType="string"/>
+      </result>
+      <param name="org_id" sqlType="STRING"/>
+      <param defaultValue="-1" name="address_id" sqlType="STRING"/>
+   </query>
+   <query id="spget_categories" useConfig="DS-AGENCY">
+      <sql>call spget_categories(?,?,?)</sql>
+      <result element="categories" rowName="">
+         <element column="string" name="string" xsdType="string"/>
+      </result>
+      <param name="org_id" sqlType="STRING"/>
+      <param name="service_id" sqlType="STRING"/>
+      <param defaultValue="-1" name="category_id" sqlType="STRING"/>
+   </query>
+   <query id="spget_contacts" useConfig="DS-AGENCY">
+      <sql>call spget_contacts(?,?,?)</sql>
+      <result element="contacts" rowName="contact">
+         <element column="id" name="id" xsdType="string"/>
+         <element column="firstname" name="firstname" xsdType="string"/>
+         <element column="lastname" name="lastname" xsdType="string"/>
+         <element column="title" name="title" xsdType="string"/>
+         <element column="phone" name="phone" xsdType="string"/>
+         <element column="email" name="email" xsdType="string"/>
+      </result>
+      <param defaultValue="-1" name="org_id" sqlType="STRING"/>
+      <param defaultValue="-1" name="service_id" sqlType="STRING"/>
+      <param defaultValue="-1" name="contact_id" sqlType="STRING"/>
+   </query>
+   <query id="spget_keywords" useConfig="DS-AGENCY">
+      <sql>call spget_keywords(?,?,?)</sql>
+      <result element="keywords" rowName="">
+         <element column="string" name="string" xsdType="string"/>
+      </result>
+      <param defaultValue="-1" name="org_id" sqlType="STRING"/>
+      <param defaultValue="-1" name="service_id" sqlType="STRING"/>
+      <param defaultValue="-1" name="keyword_id" sqlType="STRING"/>
+   </query>
+   <query id="spget_mostvisitedpages" useConfig="DS-AGENCY">
+      <sql>call spget_mostvisitedpages(?,?)</sql>
+      <result element="mostvisitedpages" rowName="page">
+         <element column="id" name="id" xsdType="string"/>
+         <element column="name" name="name" xsdType="string"/>
+         <element column="link" name="link" xsdType="string"/>
+      </result>
+      <param defaultValue="-1" name="org_id" sqlType="STRING"/>
+      <param defaultValue="-1" name="page_id" sqlType="STRING"/>
+   </query>
+   <query id="spget_rssfeeds" useConfig="DS-AGENCY">
+      <sql>call spget_rssfeeds(?,?)</sql>
+      <result element="rssfeeds" rowName="feed">
+         <element column="id" name="id" xsdType="string"/>
+         <element column="category" name="category" xsdType="string"/>
+         <element column="link" name="link" xsdType="string"/>
+      </result>
+      <param defaultValue="-1" name="org_id" sqlType="STRING"/>
+      <param defaultValue="-1" name="rssfeed_id" sqlType="STRING"/>
+   </query>
+   <query id="spget_socialmedia" useConfig="DS-AGENCY">
+      <sql>call spget_socialmedia(?,?)</sql>
+      <result element="socialmedia" rowName="media">
+         <element column="id" name="id" xsdType="string"/>
+         <element column="name" name="name" xsdType="string"/>
+         <element column="link" name="link" xsdType="string"/>
+      </result>
+      <param defaultValue="-1" name="org_id" sqlType="STRING"/>
+      <param defaultValue="-1" name="socialmedia_id" sqlType="STRING"/>
+   </query>
+   <query id="spget_services" useConfig="DS-AGENCY">
+      <sql>call spget_services(?,?);</sql>
+      <result element="services" rowName="service">
+         <element column="id" name="id" xsdType="string"/>
+         <element column="name" name="name" xsdType="string"/>
+         <element column="description" name="description" xsdType="string"/>
+         <element column="link" name="link" xsdType="string"/>
+         <element column="level" name="level" xsdType="string"/>
+         <element column="createdon" name="createdon" xsdType="string"/>
+         <element column="updatedon" name="updatedon" xsdType="string"/>
+         <call-query href="spget_categories" requiredRoles="">
+            <with-param name="org_id" query-param="org_id "/>
+            <with-param name="service_id" query-param="service_id "/>
+            <with-param name="category_id" query-param="category_id"/>
+         </call-query>
+         <call-query href="spget_keywords" requiredRoles="">
+            <with-param name="org_id" query-param="org_id "/>
+            <with-param name="service_id" query-param="service_id"/>
+            <with-param name="keyword_id" query-param="keyword_id "/>
+         </call-query>
+         <call-query href="spget_contacts" requiredRoles="">
+            <with-param name="org_id" query-param="org_id"/>
+            <with-param name="service_id" query-param="service_id"/>
+            <with-param name="contact_id" query-param="contact_id "/>
+         </call-query>
+      </result>
+      <param name="org_id" sqlType="STRING"/>
+      <param defaultValue="-1" name="service_id" sqlType="STRING"/>
+   </query>
+   <query id="get_organization" useConfig="DS-AGENCY">
+      <sql>select OrganizationID, Name from Organization Limit 10;</sql>
+      <result element="organizations" rowName="organization">
+         <element column="OrganizationID" name="org_id" xsdType="string"/>
+         <element column="Name" name="name" xsdType="string"/>
+      </result>
+   </query>
+   <operation name="get_orglist">
+      <call-query href="spget_orglist">
+         <with-param name="org_id" query-param="org_id"/>
+      </call-query>
+   </operation>
+   <operation name="get_locations">
+      <call-query href="spget_locations">
+         <with-param name="org_id" query-param="org_id"/>
+         <with-param name="address_id" query-param="address_id"/>
+      </call-query>
+   </operation>
+   <operation name="get_categories">
+      <call-query href="spget_categories">
+         <with-param name="org_id" query-param="org_id"/>
+         <with-param name="service_id" query-param="service_id"/>
+         <with-param name="category_id" query-param="category_id"/>
+      </call-query>
+   </operation>
+   <operation name="get_contacts">
+      <call-query href="spget_contacts">
+         <with-param name="org_id" query-param="org_id"/>
+         <with-param name="service_id" query-param="service_id"/>
+         <with-param name="contact_id" query-param="contact_id"/>
+      </call-query>
+   </operation>
+   <operation name="get_keywords">
+      <call-query href="spget_keywords">
+         <with-param name="org_id" query-param="org_id"/>
+         <with-param name="service_id" query-param="service_id"/>
+         <with-param name="keyword_id" query-param="keyword_id"/>
+      </call-query>
+   </operation>
+   <operation name="get_mostvisitedpages">
+      <call-query href="spget_mostvisitedpages">
+         <with-param name="org_id" query-param="org_id"/>
+         <with-param name="page_id" query-param="page_id"/>
+      </call-query>
+   </operation>
+   <operation name="get_rssfeeds">
+      <call-query href="spget_rssfeeds">
+         <with-param name="org_id" query-param="org_id"/>
+         <with-param name="rssfeed_id" query-param="rssfeed_id"/>
+      </call-query>
+   </operation>
+   <operation name="get_socialmedia">
+      <call-query href="spget_socialmedia">
+         <with-param name="org_id" query-param="org_id"/>
+         <with-param name="socialmedia_id" query-param="socialmedia_id"/>
+      </call-query>
+   </operation>
+   <operation name="get_services">
+      <call-query href="spget_services">
+         <with-param name="org_id" query-param="org_id"/>
+         <with-param name="service_id" query-param="service_id"/>
+      </call-query>
+   </operation>
+   <operation name="get_organization">
+      <call-query href="get_organization"/>
+   </operation>
+</data>
