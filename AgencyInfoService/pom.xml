@@ -2,12 +2,12 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.agencyinfo_service</groupId>
-  <artifactId>agencyinfo_service</artifactId>
+  <groupId>com.example.AgencyInfoService</groupId>
+  <artifactId>AgencyInfoService</artifactId>
   <version>1.0.0</version>
   <packaging>service/dataservice</packaging>
-  <name>agencyinfo_service</name>
-  <description>agencyinfo_service</description>
+  <name>AgencyInfoService</name>
+  <description>AgencyInfoService</description>
   <build>
     <plugins>
       <plugin>
@@ -16,7 +16,7 @@
         <version>2.0.4</version>
         <extensions>true</extensions>
         <configuration>
-          <artifact>src/main/dataservice/agencyinfo_service.dbs</artifact>
+          <artifact>src/main/dataservice/AgencyInfoService.dbs</artifact>
         </configuration>
       </plugin>
       <plugin>

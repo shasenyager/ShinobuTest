@@ -2,12 +2,12 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.example.CarbonApplicationTest</groupId>
-  <artifactId>CarbonApplicationTest</artifactId>
+  <groupId>com.example.CarbonApplication</groupId>
+  <artifactId>CarbonApplication</artifactId>
   <version>1.0.0</version>
   <packaging>carbon/application</packaging>
-  <name>CarbonApplicationTest</name>
-  <description>CarbonApplicationTest</description>
+  <name>CarbonApplication</name>
+  <description>CarbonApplication</description>
   <build>
     <plugins>
       <plugin>
@@ -52,7 +52,7 @@
               <password>admin</password>
               <operation>deploy</operation>
             </CarbonServer>
-			<CarbonServer>
+            <CarbonServer>
               <trustStorePath>${basedir}/security/client-truststore.jks</trustStorePath>
               <trustStorePassword>wso2carbon</trustStorePassword>
               <trustStoreType>JKS</trustStoreType>
@@ -66,6 +66,10 @@
       </plugin>
     </plugins>
   </build>
+  <modules>
+    <module>../AgencyInfoService</module>
+    <module>../ESBConfig</module>
+  </modules>
   <repositories>
     <repository>
       <releases>
@@ -104,21 +108,21 @@
   </pluginRepositories>
   <dependencies>
     <dependency>
-      <groupId>com.example.TestESB.api</groupId>
+      <groupId>com.example.ESBConfig.api</groupId>
       <artifactId>agency</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
     <dependency>
-      <groupId>com.example.agencyinfo_service</groupId>
-      <artifactId>agencyinfo_service</artifactId>
+      <groupId>com.example.AgencyInfoService</groupId>
+      <artifactId>AgencyInfoService</artifactId>
       <version>1.0.0</version>
       <type>dbs</type>
     </dependency>
   </dependencies>
   <properties>
-    <com.example.TestESB.api_._agency>capp/EnterpriseServiceBus</com.example.TestESB.api_._agency>
-    <com.example.agencyinfo_service_._agencyinfo_service>capp/ApplicationServer</com.example.agencyinfo_service_._agencyinfo_service>
+    <com.example.ESBConfig.api_._agency>capp/EnterpriseServiceBus</com.example.ESBConfig.api_._agency>
+    <com.example.AgencyInfoService_._AgencyInfoService>capp/ApplicationServer</com.example.AgencyInfoService_._AgencyInfoService>
     <artifact.types>service/rule=aar,lib/library/bundle=jar,synapse/message-processors=xml,synapse/proxy-service=xml,synapse/message-store=xml,carbon/application=car,registry/resource=zip,synapse/endpoint=xml,lib/dataservice/validator=jar,web/application=war,synapse/sequence=xml,synapse/configuration=xml,lib/registry/handlers=jar,synapse/task=xml,webapp/jaxws=war,synapse/api=xml,cep/bucket=xml,bpel/workflow=zip,lib/registry/filter=jar,service/dataservice=dbs,synapse/local-entry=xml,synapse/priority-executor=xml,synapse/template=xml,synapse/event-source=xml,lib/carbon/ui=jar,service/axis2=aar,wso2/gadget=dar,lib/synapse/mediator=jar</artifact.types>
   </properties>
 </project>

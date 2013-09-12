@@ -3,11 +3,11 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
-  <artifactId>MavenParentProject</artifactId>
+  <artifactId>MavenProject</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
-  <name>MavenParentProject</name>
-  <description>MavenParentProject</description>
+  <name>MavenProject</name>
+  <description>MavenProject</description>
   <build>
     <plugins>
       <plugin>
@@ -23,8 +23,7 @@
     </plugins>
   </build>
   <modules>
-    <module>TestESB</module>
-    <module>agencyinfo_service</module>
-    <module>TestAS</module>
+    <module>../AgencyInfoService</module>
+    <module>../ESBConfig</module>
   </modules>
 </project>
