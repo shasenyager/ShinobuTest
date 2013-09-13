@@ -5,7 +5,7 @@
   <groupId>com.example.CarbonApplication</groupId>
   <artifactId>CarbonApplication</artifactId>
   <version>1.0.0</version>
-  <packaging>carbon/application</packaging>
+  <packaging>pom</packaging>
   <name>CarbonApplication</name>
   <description>CarbonApplication</description>
   <build>
@@ -19,6 +19,10 @@
             <projectnature>org.wso2.developerstudio.eclipse.distribution.project.nature</projectnature>
           </projectnatures>
         </configuration>
+		<modules>
+    <module>../AgencyInfoService</module>
+    <module>../ESBConfig</module>
+  </modules>
       </plugin>
       <plugin>
         <groupId>org.wso2.maven</groupId>
