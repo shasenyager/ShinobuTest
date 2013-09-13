@@ -19,11 +19,11 @@
             <projectnature>org.wso2.developerstudio.eclipse.distribution.project.nature</projectnature>
           </projectnatures>
         </configuration>
-		<modules>
+      </plugin>
+	  <modules>
     <module>../AgencyInfoService</module>
     <module>../ESBConfig</module>
   </modules>
-      </plugin>
       <plugin>
         <groupId>org.wso2.maven</groupId>
         <artifactId>maven-car-plugin</artifactId>
