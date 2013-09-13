@@ -5,7 +5,7 @@
   <groupId>com.example.CarbonApplication</groupId>
   <artifactId>CarbonApplication</artifactId>
   <version>1.0.0</version>
-  <packaging>pom</packaging>
+  <packaging>carbon/application</packaging>
   <name>CarbonApplication</name>
   <description>CarbonApplication</description>
   <build>
