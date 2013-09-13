@@ -66,10 +66,6 @@
       </plugin>
     </plugins>
   </build>
-  <modules>
-    <module>../AgencyInfoService</module>
-    <module>../ESBConfig</module>
-  </modules>
   <repositories>
     <repository>
       <releases>
