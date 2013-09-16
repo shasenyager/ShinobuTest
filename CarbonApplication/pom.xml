@@ -43,9 +43,17 @@
         <extensions>true</extensions>
         <configuration>
           <carbonServers>
-            
             <CarbonServer>
-              <trustStorePath>${basedir}/security/client-truststore.jks</trustStorePath>
+              <trustStorePath>${basedir}/security/client-truststoreOLD.jks</trustStorePath>
+              <trustStorePassword>wso2carbon</trustStorePassword>
+              <trustStoreType>JKS</trustStoreType>
+              <serverUrl>https://localhost:9463</serverUrl>
+              <userName>admin</userName>
+              <password>admin</password>
+              <operation>deploy</operation>
+            </CarbonServer>
+            <CarbonServer>
+              <trustStorePath>${basedir}/security/wso2carbon.jks</trustStorePath>
               <trustStorePassword>wso2carbon</trustStorePassword>
               <trustStoreType>JKS</trustStoreType>
               <serverUrl>https://localhost:9448</serverUrl>
