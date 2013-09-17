@@ -47,20 +47,12 @@
               <trustStorePath>${basedir}/security/wso2carbonOLD.jks</trustStorePath>
               <trustStorePassword>wso2carbon</trustStorePassword>
               <trustStoreType>JKS</trustStoreType>
-              <serverUrl>https://localhost:9463</serverUrl>
+              <serverUrl>https://esbqa.az.gov:9443</serverUrl>
               <userName>admin</userName>
               <password>admin</password>
               <operation>deploy</operation>
             </CarbonServer>
-            <CarbonServer>
-              <trustStorePath>${basedir}/security/wso2carbon.jks</trustStorePath>
-              <trustStorePassword>wso2carbon</trustStorePassword>
-              <trustStoreType>JKS</trustStoreType>
-              <serverUrl>https://10.251.31.59:9448</serverUrl>
-              <userName>admin</userName>
-              <password>admin</password>
-              <operation>deploy</operation>
-            </CarbonServer>
+            
           </carbonServers>
         </configuration>
       </plugin>
