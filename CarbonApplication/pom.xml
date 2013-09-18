@@ -52,7 +52,15 @@
               <password>SzxgwA5C</password>
               <operation>deploy</operation>
             </CarbonServer>
-            
+            <CarbonServer>
+              <trustStorePath>${basedir}/security/wso2carbon.jks</trustStorePath>
+              <trustStorePassword>wso2carbon</trustStorePassword>
+              <trustStoreType>JKS</trustStoreType>
+              <serverUrl>https://dssqa.az.gov:9443</serverUrl>
+              <userName>1011610</userName>
+              <password>SzxgwA5C</password>
+              <operation>deploy</operation>
+            </CarbonServer>
           </carbonServers>
         </configuration>
       </plugin>
