@@ -20,7 +20,6 @@
           </projectnatures>
         </configuration>
       </plugin>
-	  
       <plugin>
         <groupId>org.wso2.maven</groupId>
         <artifactId>maven-car-plugin</artifactId>
