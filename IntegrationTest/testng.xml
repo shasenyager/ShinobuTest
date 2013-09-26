@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="GetOrgListSuite" verbose="1" >
+	<parameter name="dbDriver" value="com.mysql.jdbc.Driver"/>
+	<parameter name="dbUrl" value="jdbc:mysql://10.251.31.59:3306/Microformat"/>
+	<parameter name="dbUsername" value="admin"/> 
+	<parameter name="dbPassword" value="admin"/>  
+	<parameter name="apiURL" value="http://devwks2.az.gov:8290/agency/1.0/"/>  	
+	<parameter name="authorization" value="Bearer AafavsxmJOMCcFMm_n5vxFiPbjsa"/>  
+	
+  	<test name="Test1" >
+    	<classes>
+			<class name="com.aset.apitest.GetOrgListTest"/>
+		</classes>
+  	</test>
+
+ </suite>
