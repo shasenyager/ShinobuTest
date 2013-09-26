@@ -6,11 +6,11 @@
 	<parameter name="dbUsername" value="admin"/> 
 	<parameter name="dbPassword" value="admin"/>  
 	<parameter name="apiURL" value="http://devwks2.az.gov:8290/agency/1.0/"/>  	
-	<parameter name="authorization" value="Bearer AafavsxmJOMCcFMm_n5vxFiPbjsa"/>  
+	<parameter name="authorization" value="Bearer 6oT6InFUZuJ8vDAQi2QfAafDFWEa"/>  
 	
   	<test name="Test1" >
     	<classes>
-			<class name="com.aset.apitest.GetOrgListTest"/>
+			<class name="main.java.GetOrgListTest"/>
 		</classes>
   	</test>
 

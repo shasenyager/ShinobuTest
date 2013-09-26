@@ -1,4 +1,4 @@
-package com.aset.apitest.util;
+package main.java.util;
 
 import java.io.StringWriter;
 import java.sql.CallableStatement;

@@ -1,17 +1,18 @@
-package com.aset.apitest;
+package main.java;
 
 import java.io.IOException;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerException;
 
+import main.java.util.APIUtil;
+import main.java.util.DBUtil;
+import main.java.util.XMLUtil;
+
 import org.testng.Assert;
 import org.testng.annotations.*;
 import org.xml.sax.SAXException;
 
-import com.aset.apitest.util.APIUtil;
-import com.aset.apitest.util.DBUtil;
-import com.aset.apitest.util.XMLUtil;
 
 public class GetOrgListTest 
 {
@@ -39,7 +40,7 @@ public class GetOrgListTest
 	@DataProvider(name = "Data-Provider-Function")
 	public Object[][] parameterTestProvider() 
 	{
-		return new Object[][]{{"0D5CF94C-D8DF-4066-B9A7-693A7A0A11C8"},{"EC336387-D944-4312-ABEA-80D23B24F520"}, {"null"}, {"abcd"}};
+		return new Object[][]{{"0D5CF94C-D8DF-4066-B9A7-693A7A0A11C8"}};//,{"EC336387-D944-4312-ABEA-80D23B24F520"}, {"null"}, {"abcd"}};
 	}
 	
 	@Test(dataProvider = "Data-Provider-Function")
